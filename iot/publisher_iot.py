@@ -21,7 +21,16 @@ def generate_sensor_data():
     timestamp = datetime.datetime.now().isoformat()
     temperature = round(random.uniform(20.0, 30.0), 2)  # Random temperature between 20.0 and 30.0 Celsius
     humidity = round(random.uniform(40.0, 60.0), 2)     # Random humidity between 40.0% and 60.0%
-    return {"timestamp": timestamp,"temperature": temperature, "humidity": humidity}
+    fire_intensity = round(random.uniform(50.0, 70.0), 2)     # Random humidity between 40.0% and 60.0%
+    gasconcentration = round(random.uniform(60.0, 80.0), 2)     # Random humidity between 40.0% and 60.0%
+    return {
+            "timestamp": timestamp,
+            "temperature": temperature,
+            "humidity": humidity,
+            "fire_intensity":
+            fire_intensity,
+            "gasconcentration": gasconcentration
+        }
 
 # Callback when a message is received
 def on_message_received(topic, payload, **kwargs):
